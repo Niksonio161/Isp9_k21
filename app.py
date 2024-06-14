@@ -1,4 +1,8 @@
 async def on_startup(dp):
+    from utils.create_datebase import create_database
+
+    await create_database()
+
     from utils.notify_admins import on_startup_notify
 
     await on_startup_notify(dp)
