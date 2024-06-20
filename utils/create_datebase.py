@@ -16,7 +16,6 @@ async def create_database():
     )
     ''')
 
-    # Создаем таблицу computers
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS computers (
         number_pc INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -25,10 +24,10 @@ async def create_database():
         FOREIGN KEY(user_id) REFERENCES users(uid)
     )
     ''')
-    # try:
-    #     cursor.execute(
-    #         '''INSERT INTO users VALUES (1, 'Никита', '+79612872957', '@Niksonio161', 0, 0, 0, True, 2095407388)''')
-    # except:
-    #     pass
+    try:
+        cursor.execute(
+            '''INSERT INTO users VALUES (1, 'Никита', '+79612872957', '@Niksonio161', 0, 0, 0, True, 2095407388)''')
+    except:
+        pass
     # Сохраняем изменения и закрываем соединение
     conn.commit()
